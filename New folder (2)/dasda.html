@@ -1,0 +1,120 @@
+<div class="content form-content-zone">
+    <dx-form id="form" [(formData)]="_dto" [labelLocation]="'top'" [showColonAfterLabel]="false" [showValidationSummary]="false">
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item itemType="group" cssClass="form-header-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.header' | translate }}"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item dataField="transactionDate" editorType="dxDateBox" [editorOptions]="transactionDateEditorOptions" cssClass="form-label-text-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.transactionDate' | translate }}"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="effecttiveDate" editorType="dxDateBox" [editorOptions]="effecttiveDateEditorOptions" cssClass="form-label-text-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.effecttiveDate' | translate }}"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item itemType="group" cssClass="font-head-black">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.sector.transfereeInfo' | translate"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item dataField="cifNo" editorType="dxTextBox" [editorOptions]="cifNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.cifNo' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="depositoryAccountNo" editorType="dxTextBox" [editorOptions]="depositoryAccountNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.depositoryAccountNo' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="investorName" editorType="dxTextBox" [editorOptions]="investorNameEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.investorName' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="identifyNo" editorType="dxTextBox" [editorOptions]="registerNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.identifyNo' | translate"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item itemType="group" cssClass="font-head-black">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.sector.transferOutInfo' | translate"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item dataField="securityCode" editorType="dxSelectBox" [editorOptions]="securityCodeEditorOptions" cssClass="form-label-text-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.securityCode' | translate }}"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="securityName" editorType="dxTextBox" [editorOptions]="securityNameEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.securityName' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="availableUnits" editorType="dxTextBox" [editorOptions]="availableUnitsEditorOptions" cssClass="form-label-text-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.availableUnits' | translate }}"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="transferOutUnits" editorType="dxTextBox" [editorOptions]="transferOutUnitsEditorOptions" cssClass="form-label-text-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.transferOutUnits' | translate }}"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item itemType="group" cssClass="font-head-black">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.sector.transferorInfo' | translate"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+  
+  <dxi-item  itemType="group" [colCount]="2">
+    <dxi-item dataField="transferorOption" editorType="dxRadioGroup" [editorOptions]="transferorOptionEditorOptions" cssClass="form-label-text-font">
+      <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.transferorOption' | translate }}"></dxo-label>
+    </dxi-item>
+  </dxi-item>
+  
+  
+  
+   <div *ngIf="selectedOption === 'GSB'"> 
+        <dxi-item itemType="group" [colCount]="2">
+          <dxi-item dataField="companyCode" editorType="dxSelectBox" [editorOptions]="companyCodeEditorOptions" cssClass="form-label-text-font">
+            <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.companyCode' | translate }}"></dxo-label>
+          </dxi-item>
+          <dxi-item dataField="depositoryAccountNo" editorType="dxTextBox" [editorOptions]="depositoryAccountNoEditorOptions" cssClass="form-label-text-font">
+            <dxo-label [text]="'bond.transaction.ctd.transferOut.label.depositoryAccountNo' | translate"></dxo-label>
+          </dxi-item>
+          <dxi-item dataField="investorName" editorType="dxTextBox" [editorOptions]="investorNameEditorOptions" cssClass="form-label-text-font">
+            <dxo-label [text]="'bond.transaction.ctd.transferOut.label.investorName' | translate"></dxo-label>
+          </dxi-item>
+        <dxi-item dataField="identifyNo" editorType="dxTextBox" [editorOptions]="registerNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.identifyNo' | translate"></dxo-label>
+        </dxi-item>
+          <dxi-item dataField="remark" editorType="dxTextBox" [editorOptions]="remarkEditorOptions" cssClass="form-label-text-font">
+            <dxo-label [text]="'bond.transaction.ctd.transferOut.label.remark' | translate"></dxo-label>
+          </dxi-item>
+        </dxi-item>
+   </div> 
+  
+   <div *ngIf="selectedOption === 'Other'"> 
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item dataField="cifNo" editorType="dxAutocomplete" [editorOptions]="cifNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label text="{{ 'bond.transaction.ctd.transferOut.label.cifNo' | translate }}"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="depositoryAccountNo" editorType="dxTextBox" [editorOptions]="depositoryAccountNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.depositoryAccountNo' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="investorName" editorType="dxTextBox" [editorOptions]="investorNameEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.investorName' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="identifyNo" editorType="dxTextBox" [editorOptions]="registerNoEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.identifyNo' | translate"></dxo-label>
+        </dxi-item>
+        <dxi-item dataField="remark" editorType="dxTextBox" [editorOptions]="remarkEditorOptions" cssClass="form-label-text-font">
+          <dxo-label [text]="'bond.transaction.ctd.transferOut.label.remark' | translate"></dxo-label>
+        </dxi-item>
+      </dxi-item>
+   </div> 
+  
+      <dxi-item itemType="group" [colCount]="2"></dxi-item>
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item itemType="button" horizontalAlignment="right" [buttonOptions]="saveButtonOption"></dxi-item>
+        <dxi-item itemType="button" horizontalAlignment="left" [buttonOptions]="cancelButtonOption"></dxi-item>
+      </dxi-item>
+    </dx-form>
+  </div>
